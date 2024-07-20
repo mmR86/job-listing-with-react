@@ -1,6 +1,9 @@
 import React from "react";
 
-const Hero = ({ title = "ovo je Title", subtitle = "A ovo je subtitle" }) => {
+const Hero = ({
+  title = "Job Listing App",
+  subtitle = "Post or find a job!",
+}) => {
   return (
     <>
       <section className="bg-indigo-700 py-20 mb-4">
