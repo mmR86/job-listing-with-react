@@ -109,21 +109,5 @@ const JobPage = ({ deleteJob }) => {
     </>
   );
 };
-/*
-1. Najprije napišemo data loader s params atributom,
-  - params atribut nam je :id iz patha koji je definiran u Routu unutar path-a kao dynamic segment url-a, prema tome taj dio spada pod params atribut
-2. Data loader exportamo
-  - mogao je biti komponenta za sebe ali pošto je sklepan da loada specifičan job stavljen je u ovu komponentu
-3. Importamo ga u App komponentu i dodajemo kao loader unutar Route-a u kojem ga želimo
-  - igrom slučaja ga želimo i ovdje
-4. U Route-u (komponenti) u kojoj smo ga uključili kao loader
-importamo ga kao useLoaderData
-  - u varijablu (u ovom slučaju nazvanoj job) pozivamo importanu useLoaderData() metodu i imamo loadane podatke unutar job varijable */
-const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
-  const data = await res.json();
-  console.log(params);
-  return data;
-};
 
-export { JobPage as default, jobLoader };
+export default JobPage;
